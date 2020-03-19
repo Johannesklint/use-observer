@@ -1,5 +1,5 @@
 {
-  "name": "use-observer",
+  "name": "use-observer-hook",
   "version": "1.0.0",
   "description": "custom hook for IntersectionObserver",
   "main": "dist/index.js",
