@@ -1,0 +1,40 @@
+{
+  "name": "use-observer",
+  "version": "1.0.0",
+  "description": "custom hook for IntersectionObserver",
+  "main": "dist/index.js",
+  "source": "src/index.js",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "microbundle": "^0.11.0",
+    "prettier": "^1.19.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Johannesklint/use-observer/issues"
+  },
+  "homepage": "https://github.com/Johannesklint/use-observer#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Johannesklint/use-observer.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-hooks",
+    "hooks"
+  ],
+  "author": "Johannes Klint",
+  "license": "MIT"
+}
