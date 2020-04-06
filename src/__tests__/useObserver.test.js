@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import useObserver from '../observer'
+import useObserver from '../useObserver'
 
 describe('useObserver', () => {
   const observeMock = {
@@ -29,10 +29,13 @@ describe('useObserver', () => {
     )
   }
 
-  test('observer calls callback and internal functions', () => {
-    const { unmount } = render(<Dummy />)
+  test('observer calls internal functions', () => {
+    const { container, unmount } = render(
+      <div style={{ height: '2000px' }}>
+        <Dummy />
+      </div>,
+    )
     expect(observeMock.observe).toHaveBeenCalledWith(dummyRef)
-
     unmount()
     expect(observeMock.disconnect).toHaveBeenCalled()
   })
