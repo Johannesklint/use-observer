@@ -9,4 +9,4 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
   },
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$'],
-};
+}
