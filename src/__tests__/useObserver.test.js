@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import useObserver from '../useObserver'
+import useObserver from '../observer'
 
 describe('useObserver', () => {
   const observeMock = {
     observe: jest.fn(),
-    unobserve: jest.fn(),
+    disconnect: jest.fn(),
   }
 
   beforeAll(() => {
@@ -31,14 +31,9 @@ describe('useObserver', () => {
 
   test('observer calls callback and internal functions', () => {
     const { unmount } = render(<Dummy />)
-
     expect(observeMock.observe).toHaveBeenCalledWith(dummyRef)
-    expect(window.IntersectionObserver).toHaveBeenCalledWith(callback, {
-      root: null,
-      threshold: 1.0,
-    })
 
     unmount()
-    expect(observeMock.unobserve).toHaveBeenCalled()
+    expect(observeMock.disconnect).toHaveBeenCalled()
   })
 })
