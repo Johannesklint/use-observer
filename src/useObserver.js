@@ -2,8 +2,10 @@ import { useCallback, useRef } from 'react'
 
 const useObserver = (callback, args) => {
   const intersectionObserver = useRef()
+  const callbackRef = useRef()
+  callbackRef.current = callback
 
-  if (args && args.length) {
+  if (!Array.isArray(args)) {
     throw new Error('Pass in an array as the second argument')
   }
 
@@ -15,9 +17,8 @@ const useObserver = (callback, args) => {
     if (node) {
       intersectionObserver.current = new IntersectionObserver(
         ([entry]) => {
-          console.log('entry', entry)
           if (entry.isIntersecting) {
-            callback()
+            callbackRef.current()
           }
         },
         { root: null, threshold: 1.0 },
