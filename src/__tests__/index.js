@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import useObserver from '../useObserver'
+import useObserver from '../'
 
 describe('useObserver', () => {
   const observeMock = {
@@ -30,7 +30,7 @@ describe('useObserver', () => {
   }
 
   test('observer calls internal functions', () => {
-    const { container, unmount } = render(
+    const { unmount } = render(
       <div style={{ height: '2000px' }}>
         <Dummy />
       </div>,
